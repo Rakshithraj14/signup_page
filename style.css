@@ -1,0 +1,284 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #6e56b0 0%, #dda0dd 50%, #ffb6c1 100%);
+    color: #f9f9f9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+}
+
+:root {
+    --color-primary: #8864f0;
+    --color-border: #686870;
+    --color-muted: #67666e;
+    --color-card: #292334;
+    --color-input: #3c364c;
+    --color-placeholder: #7f7990;
+    --border-radius: 6px;
+    --border-radius-large: 22px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 18px;
+    --spacing-lg: 30px;
+    --spacing-xl: 50px;
+    --spacing-xxl: 60px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-card);
+    border-radius: var(--border-radius-large);
+    padding: 6rem;
+    width: clamp(30px, 85vw, 500px);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.12);
+    max-width: 100%;
+}
+.hero,
+form {
+    flex: 1 1 50%;
+}
+
+.hero {
+    background: url("assets/signup.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+    min-height: 200px;
+}
+
+.hero:hover {
+    transform: scale(1.02);
+}
+
+form {
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    transition: padding 0.3s ease;
+}
+
+form :is(h2, h3) {
+    text-align: center;
+    margin: 0;
+}
+
+form > h2 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+form > h3 {
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-muted);
+    font-weight: 400;
+}
+
+button,
+input {
+    height: 44px;
+    border-radius: var(--border-radius);
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    width: 100%;
+    outline: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+input {
+    cursor: text;
+}
+
+input:focus,
+button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+input {
+    background: var(--color-input);
+    padding: 0 1rem;
+    border: 1px solid transparent;
+}
+
+input:focus {
+    border-color: var(--color-primary);
+    background: #4a4158;
+}
+
+input::placeholder {
+    color: var(--color-placeholder);
+    opacity: 1;
+}
+
+.socials {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-primary);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.social-btn span {
+    font-weight: 500;
+}
+
+form > button[type="submit"] {
+    background: linear-gradient(135deg, #8864f0 0%, #dda0dd 50%, #ffb6c1 100%);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    border: none;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(136, 100, 240, 0.3);
+}
+
+form > button[type="submit"]:hover {
+    background: linear-gradient(135deg, #7a5ce8 0%, #dda0dd 60%, #ffb6c1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(136, 100, 240, 0.4);
+}
+
+form > button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(136, 100, 240, 0.3);
+}
+
+.or {
+    position: relative;
+    height: 24px;
+    margin: var(--spacing-sm) 0;
+    display: flex;
+    align-items: center;
+}
+
+.or::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-border);
+    transform: translateY(-50%);
+}
+
+.or-text {
+    position: relative;
+    z-index: 1;
+    background: var(--color-card);
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    padding: 0 var(--spacing-sm);
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsive design */
+@media (width >= 485px) {
+    form {
+        padding-inline: var(--spacing-xl);
+    }
+}
+
+@media (width >= 500px) {
+    form {
+        transition: none;
+    }
+}
+
+@media (width >= 580px) {
+    .card {
+        flex-direction: row;
+        padding: 6px 0 6px 6px;
+        width: clamp(300px, 90vw, 740px);
+    }
+
+    form :is(h2, h3) {
+        text-align: left;
+    }
+
+    .hero {
+        flex: 1 1 40%;
+        width: 50%;
+    }
+
+    form {
+        padding: var(--spacing-xxl) var(--spacing-lg);
+    }
+}
+
+@media (width >= 700px) {
+    .hero {
+        flex: 1 1 50%;
+        width: 50%;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-border: #ffffff;
+        --color-muted: #cccccc;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
