@@ -61,7 +61,3 @@ background: linear-gradient(135deg, #6e56b0 0%, #dda0dd 50%, #ffb6c1 100%);
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Made with ❤️ and modern web technologies
